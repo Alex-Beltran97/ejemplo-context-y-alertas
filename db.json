@@ -1,0 +1,40 @@
+{
+  "animals": [
+    {
+      "name": "Rabbbit",
+      "color": "black",
+      "age": 4,
+      "id": 2
+    },
+    {
+      "name": "Horse",
+      "color": "White",
+      "age": 8,
+      "id": 3
+    },
+    {
+      "name": "Cow",
+      "color": "Black and White",
+      "age": 5,
+      "id": 4
+    },
+    {
+      "name": "Dog",
+      "color": "Yellow",
+      "age": 8,
+      "id": 5
+    },
+    {
+      "name": "Gorilla",
+      "color": "Black and White",
+      "age": 4,
+      "id": 6
+    },
+    {
+      "name": "Elephant",
+      "color": "Gray",
+      "age": 8,
+      "id": 7
+    }
+  ]
+}
