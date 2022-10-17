@@ -13,7 +13,7 @@ const Home = () => {
   return (<>
     <ModalForm />
     <center>      
-      <TableContainer component={ Paper } style={{ width:"40%" }}>
+      <TableContainer component={ Paper } style={{ width:"56%" }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -28,6 +28,9 @@ const Home = () => {
               </TableCell>
               <TableCell>
                 <Typography>Age</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography>Phone</Typography>
               </TableCell>
               <TableCell>
                 <Typography>Actions</Typography>
@@ -48,6 +51,9 @@ const Home = () => {
                 </TableCell>
                 <TableCell>
                   <Typography>{ item.age }</Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography>{ item.phone }</Typography> 
                 </TableCell>
                 <TableCell>
                   <Stack direction="row">

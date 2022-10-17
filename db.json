@@ -1,38 +1,44 @@
 {
   "animals": [
     {
-      "name": "Rabbbit",
+      "name": "Sheep",
       "color": "black",
-      "age": 4,
+      "age": 2,
+      "phone": "+59 3132225556",
       "id": 2
     },
     {
       "name": "Horse",
       "color": "White",
       "age": 8,
-      "id": 3
+      "id": 3,
+      "phone": "+58 313224445"
     },
     {
       "name": "Cow",
       "color": "Black and White",
+      "phone": "+57 3132222222",
       "age": 5,
       "id": 4
     },
     {
       "name": "Dog",
       "color": "Yellow",
+      "phone": "+57 3132222222",
       "age": 8,
       "id": 5
     },
     {
       "name": "Gorilla",
       "color": "Black and White",
+      "phone": "+57 3132222222",
       "age": 4,
       "id": 6
     },
     {
       "name": "Elephant",
       "color": "Gray",
+      "phone": "+57 3132222222",
       "age": 8,
       "id": 7
     }

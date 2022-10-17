@@ -6,10 +6,12 @@ import { getAnimalById, postAnimals, putAnimal } from "../services/http_service"
 
 const FormPrueba = ({ id:idAnimal, setSuccess, setHasError }) => {
   const [animal, setAnimal] = useState({
-    id:idAnimal,
+    id:0,
     name:"",
     color:"",
     age:0,
+    indicative:0,
+    phone:0,
   });
 
   const { getAnimalsData } = useAnimals(); // Aqui invoco al contesto para tomar los valores que yo estableci
@@ -43,7 +45,18 @@ const FormPrueba = ({ id:idAnimal, setSuccess, setHasError }) => {
   const getAnimal = async (id)=>{
     try{
       const { data } = await getAnimalById(id);
-      setAnimal(data);
+
+      const {phone, ...otherData} = data;
+
+      const destructuredPhone = phone.split(" ");
+
+      const dataToSend = {
+        ...otherData,
+        indicative:+destructuredPhone[0].replace("+",""),
+        phone:+destructuredPhone[1],
+      };
+
+      setAnimal(dataToSend);
     }catch(error){
       console.log(error);
     };
@@ -63,10 +76,15 @@ const FormPrueba = ({ id:idAnimal, setSuccess, setHasError }) => {
       enableReinitialize
 
       onSubmit={(values)=>{
-        const {id, ...dataToSend} = values;
+        const { indicative, phone, ...otherData} = values;
 
         if(idAnimal){
-          updateAnimal(id,dataToSend);
+          const dataToSend = {
+            ...otherData,
+            phone:`+${ indicative } ${ phone }`
+          };
+
+          updateAnimal(idAnimal,dataToSend);
           return 
         };
 
@@ -82,6 +100,10 @@ const FormPrueba = ({ id:idAnimal, setSuccess, setHasError }) => {
             <Field type="text" name="color" />
             <InputLabel htmlFor="age">Age:</InputLabel>
             <Field type="number" name="age" />
+            <InputLabel htmlFor="indicative">Indicative:</InputLabel>
+            <Field type="number" name="indicative" />
+            <InputLabel htmlFor="phone">Phone:</InputLabel>
+            <Field type="number" name="phone" />
             <Button variant="contained" type="submit">Send</Button>
           </Stack>
         </Form>
