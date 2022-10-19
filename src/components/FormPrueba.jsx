@@ -14,18 +14,16 @@ const FormPrueba = ({ id:idAnimal, setSuccess, setHasError }) => {
     phone:0,
   });
 
-  const { getAnimalsData } = useAnimals(); // Aqui invoco al contesto para tomar los valores que yo estableci
+  const { getAnimalsData } = useAnimals(); // Aqui invoco al contesto para tomar los valores que yo establecid.
 
   const createAnAnimal = async (data) =>{
     try{
       const result = await postAnimals(data);
       setSuccess(true);
-      console.log(result);
       getAnimalsData();
     }catch(error){
       setSuccess(true);
       setHasError(true);
-      console.log(error);
     };
   };
   
